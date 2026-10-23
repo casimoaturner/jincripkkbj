@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KBJ Korea Premium | Best Korean BJ & Jincrip Collection</title>
+  <meta name="description" content="Best collection of Korean BJ & Jincrip videos, full HD, updated daily. Stream free now!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0c;
+      --card: #141418;
+      --accent: #c9a227;
+      --accent-soft: rgba(201, 162, 39, 0.15);
+      --text: #f5f5f7;
+      --muted: #a1a1aa;
+      --border: rgba(255,255,255,0.08);
+      --gradient: linear-gradient(135deg, #c9a227 0%, #e8d48b 50%, #c9a227 100%);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(201, 162, 39, 0.12), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(120, 40, 140, 0.08), transparent);
+      pointer-events: none;
+      z-index: -1;
+    }
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1rem 2rem;
+      background: rgba(10, 10, 12, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    header.scrolled { padding: 0.7rem 2rem; box-shadow: 0 4px 30px rgba(0,0,0,0.4); }
+    .nav {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500;
+      transition: color 0.25s; position: relative;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 1.5px; background: var(--accent); transition: width 0.3s;
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .btn-premium {
+      background: var(--gradient); color: #0a0a0c;
+      padding: 0.55rem 1.4rem; border-radius: 50px;
+      font-weight: 600; font-size: 0.85rem; text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 4px 15px rgba(201, 162, 39, 0.25);
+    }
+    .btn-premium:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(201, 162, 39, 0.4); }
+    .hero {
+      min-height: 85vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 8rem 1.5rem 4rem;
+    }
+    .hero-content { max-width: 800px; animation: fadeUp 1s ease-out; }
+    .hero-badge {
+      display: inline-block; background: var(--accent-soft); color: var(--accent);
+      padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 1px; margin-bottom: 1.5rem;
+      border: 1px solid rgba(201, 162, 39, 0.3);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem); font-weight: 700;
+      line-height: 1.15; margin-bottom: 1.2rem;
+    }
+    .hero h1 span {
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p { color: var(--muted); font-size: 1.15rem; max-width: 560px; margin: 0 auto 2.5rem; }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gradient); color: #0a0a0c;
+      padding: 0.9rem 2rem; border-radius: 50px; font-weight: 600;
+      text-decoration: none; transition: all 0.3s;
+      box-shadow: 0 8px 30px rgba(201, 162, 39, 0.3);
+    }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 40px rgba(201, 162, 39, 0.45); }
+    .btn-outline {
+      border: 1.5px solid var(--border); color: var(--text);
+      padding: 0.9rem 2rem; border-radius: 50px; font-weight: 500;
+      text-decoration: none; transition: all 0.3s; background: rgba(255,255,255,0.03);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    .ad-slot { max-width: 1280px; margin: 2rem auto; padding: 0 1.5rem; }
+    .ad-box {
+      background: var(--card); border: 1px dashed rgba(201, 162, 39, 0.35);
+      border-radius: 12px; padding: 1.5rem; text-align: center;
+      color: var(--muted); font-size: 0.85rem; position: relative;
+    }
+    .ad-box::before {
+      content: ''; position: absolute; top: 8px; right: 12px;
+      font-size: 0.65rem; letter-spacing: 1px; opacity: 0.5;
+    }
+    .ad-box.banner-728 { min-height: 90px; display: flex; align-items: center; justify-content: center; }
+    .ad-box.native { min-height: 120px; }
+    section { padding: 4rem 1.5rem; max-width: 1280px; margin: 0 auto; }
+    .section-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;
+    }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; }
+    .section-title span { color: var(--accent); }
+    .view-all { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.25s; }
+    .view-all:hover { color: var(--accent); }
+    .video-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.8rem;
+    }
+    .video-card {
+      background: var(--card); border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      cursor: pointer; position: relative;
+      opacity: 0; transform: translateY(30px); animation: fadeUp 0.7s ease forwards;
+    }
+    .video-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(201, 162, 39, 0.4);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(201, 162, 39, 0.15);
+    }
+    .thumb-wrap { position: relative; aspect-ratio: 16/10; overflow: hidden; background: #1a1a1f; }
+    .thumb { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+    .video-card:hover .thumb { transform: scale(1.08); }
+    .duration {
+      position: absolute; bottom: 10px; right: 10px;
+      background: rgba(0,0,0,0.75); color: #fff; font-size: 0.75rem;
+      padding: 3px 8px; border-radius: 4px; font-weight: 500;
+    }
+    .badge-hot {
+      position: absolute; top: 10px; left: 10px;
+      background: linear-gradient(135deg, #e11d48, #be123c); color: white;
+      font-size: 0.7rem; font-weight: 600; padding: 4px 10px; border-radius: 50px;
+    }
+    .badge-new {
+      position: absolute; top: 10px; left: 10px;
+      background: linear-gradient(135deg, #c9a227, #a67c00); color: #0a0a0c;
+      font-size: 0.7rem; font-weight: 600; padding: 4px 10px; border-radius: 50px;
+    }
+    .card-body { padding: 1.1rem 1.2rem 1.3rem; }
+    .card-title {
+      font-size: 0.95rem; font-weight: 500; line-height: 1.4; margin-bottom: 0.6rem;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .card-meta { display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: var(--muted); }
+    .categories { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .cat-btn {
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      color: var(--muted); padding: 0.5rem 1.2rem; border-radius: 50px;
+      font-size: 0.85rem; cursor: pointer; transition: all 0.25s;
+    }
+    .cat-btn:hover, .cat-btn.active {
+      background: var(--accent-soft); border-color: var(--accent); color: var(--accent);
+    }
+    footer {
+      border-top: 1px solid var(--border); padding: 3rem 1.5rem; margin-top: 3rem; text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 1rem;
+      background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.25s; }
+    .footer-links a:hover { color: var(--accent); }
+    .copyright { color: var(--muted); font-size: 0.8rem; opacity: 0.7; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .video-card:nth-child(1) { animation-delay: 0.05s; }
+    .video-card:nth-child(2) { animation-delay: 0.1s; }
+    .video-card:nth-child(3) { animation-delay: 0.15s; }
+    .video-card:nth-child(4) { animation-delay: 0.2s; }
+    .video-card:nth-child(5) { animation-delay: 0.25s; }
+    .video-card:nth-child(6) { animation-delay: 0.3s; }
+    .video-card:nth-child(7) { animation-delay: 0.35s; }
+    .video-card:nth-child(8) { animation-delay: 0.4s; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { min-height: 70vh; padding-top: 7rem; }
+      .section-title { font-size: 1.5rem; }
+    }
+    .modal {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9);
+      z-index: 200; align-items: center; justify-content: center; padding: 1rem;
+    }
+    .modal.active { display: flex; }
+    .modal-content {
+      background: var(--card); border-radius: 16px; max-width: 800px; width: 100%;
+      padding: 2rem; text-align: center; border: 1px solid var(--border); position: relative;
+    }
+    .modal-close {
+      position: absolute; top: 1rem; right: 1.2rem; background: none; border: none;
+      color: var(--muted); font-size: 1.5rem; cursor: pointer;
+    }
+    .modal h3 { margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+    .modal p { color: var(--muted); margin-bottom: 1.5rem; }
+    .ad-native-box {
+      background: #1a1a1f; border-radius: 10px; padding: 1.5rem; margin: 1rem 0;
+      min-height: 100px; display: flex; align-items: center; justify-content: center;
+      border: 1px dashed rgba(201,162,39,0.3); color: var(--muted); font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <nav class="nav">
+      <div class="logo">KBJ Korea+</div>
+      <ul class="nav-links">
+        <li><a href="#trending">Trending</a></li>
+        <li><a href="#new">Latest</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#premium">Premium</a></li>
+      </ul>
+      <a href="https://t.me/+-7HhJSBTMPdhODdl" class="btn-premium">Get Premium</a>
+    </nav>
+  </header>
+
+ <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,5059498,4,2,120,55,00000010']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5059498&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🔥 DAILY UPDATES • FULL HD</div>
+      <h1>Premium <span>Korean BJ</span> & Jincrip Collection</h1>
+      <p>Stream the hottest Korean BJ videos in full HD. Updated every hour. Click and watch before they're gone!</p>
+      <div class="hero-buttons">
+        <a href="https://www.profitableratecpmnetwork.com/c394m25yj?key=59887fc01651fa0d321f8c8be30dd3dd" class="btn-primary">Watch Now</a>
+        <a href="https://t.me/+-7HhJSBTMPdhODdl" class="btn-outline">View Premium</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="ad-slot">
+    <div class="ad-box banner-728">
+      <span><script>
+  atOptions = {
+    'key' : '11069b6298bb2b9301223f7b9a76597b',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highrevenueformat.com/11069b6298bb2b9301223f7b9a76597b/invoke.js"></script>
+</span>
+    </div>
+  </div>
+
+  <section id="trending">
+    <div class="section-header">
+      <h2 class="section-title">🔥 Trending <span>Today</span></h2>
+      <a href="#" class="view-all">View All →</a>
+    </div>
+    <div class="video-grid" id="trending-grid"></div>
+  </section>
+
+  <div class="ad-slot">
+    <div class="ad-box native">
+      <span><script src="https://pl31011216.profitableratecpmnetwork.com/51/fc/cc/51fccca3ae9cfd4cd9a60b7976068dd5.js"></script>
+</span>
+    </div>
+  </div>
+
+  <section id="new">
+    <div class="section-header">
+      <h2 class="section-title">✨ Newly <span>Uploaded</span></h2>
+      <a href="#" class="view-all">View All →</a>
+    </div>
+    <div class="categories" id="categories">
+      <button class="cat-btn active" data-cat="all">All</button>
+      <button class="cat-btn" data-cat="bj">Korean BJ</button>
+      <button class="cat-btn" data-cat="live">Live Stream</button>
+      <button class="cat-btn" data-cat="private">Private</button>
+      <button class="cat-btn" data-cat="hot">Hot</button>
+    </div>
+    <div class="video-grid" id="new-grid"></div>
+  </section>
+
+  <section id="premium" style="text-align:center; padding-bottom:5rem;">
+    <div style="background: linear-gradient(135deg, rgba(201,162,39,0.1), rgba(120,40,140,0.08)); border:1px solid rgba(201,162,39,0.25); border-radius:20px; padding:3rem 2rem; max-width:700px; margin:0 auto;">
+      <h2 class="section-title" style="margin-bottom:1rem;">Unlock <span>Full Premium</span></h2>
+      <p style="color:var(--muted); margin-bottom:2rem; max-width:480px; margin-left:auto; margin-right:auto;">Get unlimited access to all videos in 4K quality, no watermarks, No ADS, and exclusive daily updates.</p>
+      <a href="https://t.me/+-7HhJSBTMPdhODdl" class="btn-primary" onclick="openModal(); return false;">Get Access Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">KBJ Korea+</div>
+    <div class="footer-links">
+      <a href="#">Disclaimer</a>
+      <a href="#">DMCA</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy</a>
+    </div>
+    <p class="copyright">© 2026 KBJ Korea Premium. All rights reserved. 18+ Only.</p>
+  </footer>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <h3>Unlock Full Video</h3>
+      <p>Click the link below to watch the full HD video without any restrictions.</p>
+      <div class="ad-native-box">
+       Watch And Join Our In Telegram
+      </div>
+      <a href="https://www.profitableratecpmnetwork.com/c394m25yj?key=59887fc01651fa0d321f8c8be30dd3dd" class="btn-primary" style="display:inline-block; margin-top:1rem;" target="_blank">Continue to Video →</a>
+    </div>
+  </div>
+
+  <script>
+    const videos = [
+      { title: "Gorgeous Korean BJ Live Tonight – Full Uncensored 🔥", duration: "32:15", views: "1.2M", badge: "hot", cat: "bj", thumb: "jincrip 1.jpg" },
+      { title: "New! Private Seoul BJ Show – Exclusive Content", duration: "45:08", views: "890K", badge: "new", cat: "private", thumb: "jincrip2.jpg" },
+      { title: "Viral Korean Jincrip – This Girl Broke the Internet", duration: "28:40", views: "2.1M", badge: "hot", cat: "hot", thumb: "jincrip 3.jpg" },
+      { title: "Korean BJ Live Stream at Midnight – Don’t Miss It", duration: "51:22", views: "670K", badge: "new", cat: "live", thumb: "jincrip 4.jpg" },
+      { title: "KBJ Premium: Private Room Full HD Updated Today", duration: "39:55", views: "1.5M", badge: "hot", cat: "private", thumb: "jincrip5.jpg" },
+      { title: "Korean Cam Girl Live – Tonight’s Show Will Shock You", duration: "22:18", views: "980K", badge: "", cat: "bj", thumb: "jincrip6.jpg" },
+      { title: "Hot Jincrip: New BJ Debut – Instantly Trending", duration: "35:47", views: "1.8M", badge: "new", cat: "hot", thumb: "jincrip7.jpg" },
+      { title: "Full Korean Show – Private Room 4K No Cuts", duration: "48:30", views: "720K", badge: "", cat: "private", thumb: "jincrip8.jpg" }
+    ];
+
+    function createCard(v) {
+      const badgeHTML = v.badge === 'hot' ? '<span class="badge-hot">HOT</span>' : v.badge === 'new' ? '<span class="badge-new">NEW</span>' : '';
+      return `
+        <div class="video-card" data-cat="${v.cat}" onclick="openModal()">
+          <div class="thumb-wrap">
+            <img class="thumb" src="${v.thumb}" alt="${v.title}" loading="lazy">
+            ${badgeHTML}
+            <span class="duration">${v.duration}</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">${v.title}</h3>
+            <div class="card-meta">
+              <span class="views">▶ ${v.views} views</span>
+              <span>KBJ</span>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    const trendingGrid = document.getElementById('trending-grid');
+    const newGrid = document.getElementById('new-grid');
+    videos.slice(0, 4).forEach(v => trendingGrid.innerHTML += createCard(v));
+    videos.forEach(v => newGrid.innerHTML += createCard(v));
+
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.cat;
+        document.querySelectorAll('#new-grid .video-card').forEach(card => {
+          card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'block' : 'none';
+        });
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    function openModal() { document.getElementById('modal').classList.add('active'); }
+    function closeModal() { document.getElementById('modal').classList.remove('active'); }
+    document.getElementById('modal').addEventListener('click', e => { if (e.target.id === 'modal') closeModal(); });
+  </script>
+</body>
+</html>
